@@ -1,0 +1,21 @@
+klee --optimize --output-dir=klee-out-dekhash-virt1 --only-output-states-covering-new --check-overshift=false --libc=uclibc --emit-all-errors --write-smt2s --use-query-log=all:smt2 --posix-runtime ./dekhash-virt1.bc --sym-arg 14
+PID: 2274
+Started: 2015-11-18 12:28:43
+BEGIN searcher description
+<InterleavedSearcher> containing 2 searchers:
+RandomPathSearcher
+WeightedRandomSearcher::CoveringNew
+</InterleavedSearcher>
+END searcher description
+Finished: 2015-11-18 12:28:43
+Elapsed: 00:00:00
+KLEE: done: explored paths = 18
+KLEE: done: avg. constructs per query = 24
+KLEE: done: total queries = 31
+KLEE: done: valid queries = 5
+KLEE: done: invalid queries = 26
+KLEE: done: query cex = 31
+
+KLEE: done: total instructions = 42642
+KLEE: done: completed paths = 18
+KLEE: done: generated tests = 3

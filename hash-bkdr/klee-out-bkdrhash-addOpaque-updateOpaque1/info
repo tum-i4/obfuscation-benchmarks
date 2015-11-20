@@ -1,0 +1,21 @@
+klee --optimize --output-dir=klee-out-bkdrhash-addOpaque-updateOpaque1 --only-output-states-covering-new --check-overshift=false --libc=uclibc --emit-all-errors --write-smt2s --use-query-log=all:smt2 --posix-runtime ./bkdrhash-addOpaque-updateOpaque1.bc --sym-arg 14
+PID: 24898
+Started: 2015-11-17 20:02:21
+BEGIN searcher description
+<InterleavedSearcher> containing 2 searchers:
+RandomPathSearcher
+WeightedRandomSearcher::CoveringNew
+</InterleavedSearcher>
+END searcher description
+Finished: 2015-11-17 20:02:31
+Elapsed: 00:00:10
+KLEE: done: explored paths = 25
+KLEE: done: avg. constructs per query = 44
+KLEE: done: total queries = 42
+KLEE: done: valid queries = 3
+KLEE: done: invalid queries = 39
+KLEE: done: query cex = 42
+
+KLEE: done: total instructions = 5062
+KLEE: done: completed paths = 25
+KLEE: done: generated tests = 4

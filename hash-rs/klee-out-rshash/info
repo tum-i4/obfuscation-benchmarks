@@ -1,0 +1,21 @@
+klee --optimize --output-dir=klee-out-rshash --only-output-states-covering-new --check-overshift=false --libc=uclibc --emit-all-errors --write-smt2s --use-query-log=all:smt2 --posix-runtime ./rshash.bc --sym-arg 14
+PID: 27390
+Started: 2015-11-18 02:18:19
+BEGIN searcher description
+<InterleavedSearcher> containing 2 searchers:
+RandomPathSearcher
+WeightedRandomSearcher::CoveringNew
+</InterleavedSearcher>
+END searcher description
+Finished: 2015-11-18 04:06:55
+Elapsed: 01:48:36
+KLEE: done: explored paths = 26
+KLEE: done: avg. constructs per query = 44
+KLEE: done: total queries = 42
+KLEE: done: valid queries = 2
+KLEE: done: invalid queries = 40
+KLEE: done: query cex = 42
+
+KLEE: done: total instructions = 4395
+KLEE: done: completed paths = 26
+KLEE: done: generated tests = 4

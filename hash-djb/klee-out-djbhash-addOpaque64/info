@@ -1,0 +1,21 @@
+klee --optimize --output-dir=klee-out-djbhash-addOpaque64 --only-output-states-covering-new --check-overshift=false --libc=uclibc --emit-all-errors --write-smt2s --use-query-log=all:smt2 --posix-runtime ./djbhash-addOpaque64.bc --sym-arg 14
+PID: 2605
+Started: 2015-11-18 12:28:58
+BEGIN searcher description
+<InterleavedSearcher> containing 2 searchers:
+RandomPathSearcher
+WeightedRandomSearcher::CoveringNew
+</InterleavedSearcher>
+END searcher description
+Finished: 2015-11-18 12:28:59
+Elapsed: 00:00:01
+KLEE: done: explored paths = 18
+KLEE: done: avg. constructs per query = 23
+KLEE: done: total queries = 30
+KLEE: done: valid queries = 4
+KLEE: done: invalid queries = 26
+KLEE: done: query cex = 30
+
+KLEE: done: total instructions = 5365
+KLEE: done: completed paths = 18
+KLEE: done: generated tests = 3

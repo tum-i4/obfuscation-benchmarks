@@ -1,0 +1,5 @@
+KLEE: WARNING ONCE: function "APHash" has inline asm
+KLEE: WARNING: undefined reference to function: klee_posix_prefer_cex
+KLEE: WARNING: undefined reference to function: puts
+KLEE: WARNING ONCE: calling external: syscall(16, 0, 21505, 31949552)
+KLEE: WARNING ONCE: calling external: puts(18066656)

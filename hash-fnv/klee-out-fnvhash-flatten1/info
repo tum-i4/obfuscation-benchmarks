@@ -1,0 +1,21 @@
+klee --optimize --output-dir=klee-out-fnvhash-flatten1 --only-output-states-covering-new --check-overshift=false --libc=uclibc --emit-all-errors --write-smt2s --use-query-log=all:smt2 --posix-runtime ./fnvhash-flatten1.bc --sym-arg 14
+PID: 31318
+Started: 2015-11-18 10:15:59
+BEGIN searcher description
+<InterleavedSearcher> containing 2 searchers:
+RandomPathSearcher
+WeightedRandomSearcher::CoveringNew
+</InterleavedSearcher>
+END searcher description
+Finished: 2015-11-18 10:38:29
+Elapsed: 00:22:30
+KLEE: done: explored paths = 20
+KLEE: done: avg. constructs per query = 26
+KLEE: done: total queries = 32
+KLEE: done: valid queries = 3
+KLEE: done: invalid queries = 29
+KLEE: done: query cex = 32
+
+KLEE: done: total instructions = 4818
+KLEE: done: completed paths = 20
+KLEE: done: generated tests = 3

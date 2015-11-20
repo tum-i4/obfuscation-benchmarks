@@ -1,0 +1,6 @@
+(set-logic QF_AUFBV )
+(declare-fun arg0 () (Array (_ BitVec 32) (_ BitVec 8) ) )
+(declare-fun model_version () (Array (_ BitVec 32) (_ BitVec 8) ) )
+(assert (let ( (?B1 (select  arg0 (_ bv1 32) ) ) (?B2 (select  arg0 (_ bv0 32) ) ) ) (let ( (?B3 ((_ sign_extend 24)  ?B1 ) ) (?B4 ((_ sign_extend 24)  ?B2 ) ) ) (let ( (?B5 (bvshl  ?B4 (_ bv4 32) ) ) ) (let ( (?B6 (bvadd  (bvshl  (bvand  ?B3 ?B5 ) (_ bv1 32) ) (bvxor  ?B3 ?B5 ) ) ) ) (and  (and  (and  (and  (and  (=  (_ bv1 32) (concat  (select  model_version (_ bv3 32) ) (concat  (select  model_version (_ bv2 32) ) (concat  (select  model_version (_ bv1 32) ) (select  model_version (_ bv0 32) ) ) ) ) ) (=  false (=  (_ bv0 8) ?B2 ) ) ) (=  false (=  (_ bv0 8) ?B1 ) ) ) (=  (_ bv0 8) (select  arg0 (_ bv2 32) ) ) ) (=  (_ bv4294967295 32) (bvadd  ?B4 (bvxor  (_ bv268435455 32) (bvor  ?B4 (_ bv4026531840 32) ) ) ) ) ) (=  (_ bv4294967295 32) (bvadd  ?B6 (bvxor  (_ bv268435455 32) (bvor  ?B6 (_ bv4026531840 32) ) ) ) ) ) ) ) ) ) )
+(check-sat-using (then simplify solve-eqs bit-blast sat tseitin-cnf))
+(exit)

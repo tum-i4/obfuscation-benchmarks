@@ -1,0 +1,21 @@
+klee --optimize --output-dir=klee-out-elfhash-addOpaque64 --only-output-states-covering-new --check-overshift=false --libc=uclibc --emit-all-errors --write-smt2s --use-query-log=all:smt2 --posix-runtime ./elfhash-addOpaque64.bc --sym-arg 14
+PID: 11862
+Started: 2015-11-17 16:55:44
+BEGIN searcher description
+<InterleavedSearcher> containing 2 searchers:
+RandomPathSearcher
+WeightedRandomSearcher::CoveringNew
+</InterleavedSearcher>
+END searcher description
+Finished: 2015-11-17 16:58:46
+Elapsed: 00:03:02
+KLEE: done: explored paths = 3055
+KLEE: done: avg. constructs per query = 964
+KLEE: done: total queries = 3141
+KLEE: done: valid queries = 72
+KLEE: done: invalid queries = 3069
+KLEE: done: query cex = 3141
+
+KLEE: done: total instructions = 206953
+KLEE: done: completed paths = 3055
+KLEE: done: generated tests = 4

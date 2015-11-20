@@ -1,0 +1,3 @@
+klee --optimize --output-dir=klee-out-aphash-encodeArithmetic1 --only-output-states-covering-new --check-overshift=false --libc=uclibc --emit-all-errors --write-smt2s --use-query-log=all:smt2 --posix-runtime ./aphash-encodeArithmetic1.bc --sym-arg 14
+PID: 518
+Started: 2015-11-18 11:49:47
