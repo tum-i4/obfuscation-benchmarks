@@ -1,8 +1,8 @@
 # Obfuscation Benchmarks
-------------------------
-By *Obfuscation Benchmarks* we mean programs which can be obfuscated using different tools at both source code, intermediate representation and/or machine code level.
-The reason for obfuscating these programs can be (but is not limited) to compare the strength of different obfuscation transformations/implementations against both manual and automated attacks. 
-This repository contains the source code of programs written in the C programming language, which can be used as obfuscation benchmarks. 
+
+By *Obfuscation Benchmarks* we mean programs which can be obfuscated using different tools at: source code, intermediate representation and/or machine code level.
+The reason for obfuscating these programs can be (but is not limited) to compare the strength of different obfuscation transformations/implementations against both human-assisted and automated attacks. 
+This repository contains the source code of C programs, which can be used as obfuscation benchmarks. 
 
 ## Description of Each Directory
 
