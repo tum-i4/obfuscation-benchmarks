@@ -1,5 +1,0 @@
-KLEE: WARNING ONCE: function "__user_main" has inline asm
-KLEE: WARNING: undefined reference to function: klee_posix_prefer_cex
-KLEE: WARNING: undefined reference to function: puts
-KLEE: WARNING ONCE: calling external: syscall(16, 0, 21505, 52487680)
-KLEE: WARNING ONCE: calling external: puts(50127968)

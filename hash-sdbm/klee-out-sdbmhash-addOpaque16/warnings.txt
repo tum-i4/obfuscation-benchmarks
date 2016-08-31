@@ -1,5 +1,0 @@
-KLEE: WARNING ONCE: function "SDBMHash" has inline asm
-KLEE: WARNING: undefined reference to function: klee_posix_prefer_cex
-KLEE: WARNING: undefined reference to function: puts
-KLEE: WARNING ONCE: calling external: syscall(16, 0, 21505, 40711120)
-KLEE: WARNING ONCE: calling external: puts(30467808)

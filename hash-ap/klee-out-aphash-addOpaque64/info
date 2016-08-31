@@ -1,3 +1,0 @@
-klee --optimize --output-dir=klee-out-aphash-addOpaque64 --only-output-states-covering-new --check-overshift=false --libc=uclibc --emit-all-errors --write-smt2s --use-query-log=all:smt2 --posix-runtime ./aphash-addOpaque64.bc --sym-arg 14
-PID: 31936
-Started: 2015-11-18 10:40:04

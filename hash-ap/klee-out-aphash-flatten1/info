@@ -1,3 +1,0 @@
-klee --optimize --output-dir=klee-out-aphash-flatten1 --only-output-states-covering-new --check-overshift=false --libc=uclibc --emit-all-errors --write-smt2s --use-query-log=all:smt2 --posix-runtime ./aphash-flatten1.bc --sym-arg 14
-PID: 4343
-Started: 2015-11-18 19:50:57

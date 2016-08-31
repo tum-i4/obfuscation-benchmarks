@@ -1,5 +1,0 @@
-KLEE: WARNING ONCE: function "RSHash" has inline asm
-KLEE: WARNING: undefined reference to function: klee_posix_prefer_cex
-KLEE: WARNING: undefined reference to function: puts
-KLEE: WARNING ONCE: calling external: syscall(16, 0, 21505, 34576944)
-KLEE: WARNING ONCE: calling external: puts(16710272)

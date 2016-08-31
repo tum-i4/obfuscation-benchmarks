@@ -1,3 +1,0 @@
-klee --optimize --output-dir=klee-out-fnvhash-flatten2 --only-output-states-covering-new --check-overshift=false --libc=uclibc --emit-all-errors --write-smt2s --use-query-log=all:smt2 --posix-runtime ./fnvhash-flatten2.bc --sym-arg 14
-PID: 31877
-Started: 2015-11-18 10:39:44

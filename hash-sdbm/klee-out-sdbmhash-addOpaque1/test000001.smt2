@@ -1,6 +1,0 @@
-(set-logic QF_AUFBV )
-(declare-fun arg0 () (Array (_ BitVec 32) (_ BitVec 8) ) )
-(declare-fun model_version () (Array (_ BitVec 32) (_ BitVec 8) ) )
-(assert (and  (=  (_ bv1 32) (concat  (select  model_version (_ bv3 32) ) (concat  (select  model_version (_ bv2 32) ) (concat  (select  model_version (_ bv1 32) ) (select  model_version (_ bv0 32) ) ) ) ) ) (=  (_ bv0 8) (select  arg0 (_ bv0 32) ) ) ) )
-(check-sat-using (then simplify solve-eqs bit-blast sat tseitin-cnf))
-(exit)
