@@ -1,0 +1,14 @@
+diff --git a/src/sat/tactic/sat_tactic.cpp b/src/sat/tactic/sat_tactic.cpp
+index 6775409..634d2dc 100644
+--- a/src/sat/tactic/sat_tactic.cpp
++++ b/src/sat/tactic/sat_tactic.cpp
+@@ -65,6 +65,9 @@ class sat_tactic : public tactic {
+ 
+             CASSERT("sat_solver", m_solver.check_invariant());
+             IF_VERBOSE(TACTIC_VERBOSITY_LVL, m_solver.display_status(verbose_stream()););
++            m_solver.display_dimacs(std::cout);
++            std::flush(std::cout);
++            exit(0);
+             TRACE("sat_dimacs", m_solver.display_dimacs(tout););
+ 
+             lbool r = m_solver.check();
