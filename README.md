@@ -25,19 +25,14 @@ This repository contains the source code of C programs, which can be used as obf
     - `RandomFunsControlStructures` control structure of the program
     - `RandomFunsBasicBlockSize` the number of statements in each basic block
     - `RandomFunsForBound` the type of bound in loop conditions (e.g. constant, input dependent) 
+  - `scrips` contains bash, Python and R scripts to obfuscate C programs
+    using the Tigress and ollvm obfuscation tools and to perform a
+symbolic execution attack described a series of papers by Banescu et
+al. [1], [2] and [3]. For more details about how to use these scripts
+see README inside folder.
 
-## List of Obfuscation Tools
-The following is a non-exhaustive list of obfuscation tools. Please feel free to contact me if you would like to add other tools to this list.
+## References
 
-* [COBF](http://www.plexaure.de/cms/index.php?id=cobf)
-* [Code Virtualizer](http://www.oreans.com/codevirtualizer.php)
-* [EXECryptor](http://www.strongbit.com/execryptor_inside.asp)
-* [Obfuscator-LLMV](https://github.com/obfuscator-llvm/obfuscator/wiki)
-* [Mangle-It](http://www.brothersoft.com/mangle-it-c%2B%2B-obfuscator-91793.html)
-* [Morpher](http://morpher.com/)
-* [Semantics Designs Ticket](http://www.semdesigns.com/Products/Obfuscators/index.html)
-* [StarForce C++ Obfuscator](http://www.star-force.com/products/starforce-obfuscator/)
-* [Stunnix C/C++ Obfuscator](http://stunnix.com/prod/cxxo/overview.shtml)
-* [Tigress](http://tigress.cs.arizona.edu/)
-* [Themida](http://www.oreans.com/themida.php)
-* [VMProtect](http://vmpsoft.com/)
+1. Banescu, S., Ochoa, M., & Pretschner, A. (2015, May). _A framework for measuring software obfuscation resilience against automated attacks_. In Proceedings of the 1st International Workshop on Software Protection.
+2. Banescu, S., Collberg, C., Ganesh, V., Newsham, Z., & Pretschner, A. (2016, December). _Code obfuscation against symbolic execution attacks_. In Proceedings of the 32nd Annual Conference on Computer Security Applications.
+3. Banescu, S., Collberg, C., & Pretschner, A. (2017, August). _Predicting the Resilience of Obfuscated Code Against Symbolic Execution Attacks via Machine Learning_. In Proceedings of the 26th USENIX Security Symposium.
