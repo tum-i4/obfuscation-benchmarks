@@ -19,11 +19,8 @@ RUN echo "$USERNAME:$USERNAME" | chpasswd && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get -y install default-jre-headless default-jdk && \
-    apt-get -y install gcc g++ mono-mcs python-dev && \
-    apt-get -y install libffi-dev build-essential virtualenvwrapper &&\
+    apt-get -y install gcc g++ mono-mcs && \
     apt-get clean && \
-    # Install angr
-    mkvirtualenv angr && pip install angr && \
     rm -rf /var/lib/apt/lists/*
 USER $USERNAME
     
