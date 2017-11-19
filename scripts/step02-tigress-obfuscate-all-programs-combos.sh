@@ -10,5 +10,5 @@ do
   F=${FILE_W_EXT%.*}
   echo ${FILE_W_EXT}
 
-  ./generate-obfuscated.sh ${F}
+  ${HOME}/scripts/generate-obfuscated.sh ${F}
 done

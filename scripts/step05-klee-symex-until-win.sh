@@ -71,12 +71,6 @@ do
   echo "$file_name  $total_time $found" >> klee-time-to-win.txt
   D=klee-out-${file_name}
 
-  if [ "$found" -ne 1 ]
-  then
-    rm ${D}/*.smt2
-    continue  
-  fi
-
   echo "Finished KLEE execution. Starting replay"
   ## delete all smt2 files that do not lead to win!
   D=klee-out-${file_name}

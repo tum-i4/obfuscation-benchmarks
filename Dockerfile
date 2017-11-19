@@ -19,8 +19,11 @@ RUN echo "$USERNAME:$USERNAME" | chpasswd && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get -y install default-jre-headless default-jdk && \
-    apt-get -y install gcc g++ mono-mcs && \
+    apt-get -y install gcc g++ mono-mcs python-dev && \
+    apt-get -y install libffi-dev build-essential virtualenvwrapper &&\
     apt-get clean && \
+    # Install angr
+    mkvirtualenv angr && pip install angr && \
     rm -rf /var/lib/apt/lists/*
 USER $USERNAME
     
@@ -38,6 +41,7 @@ RUN unzip tigress-Linux-x86_64-2.2.zip && \
     echo 'export PATH=$PATH:'${HOME}'/tigress-2.2' >> /home/$USERNAME/.bashrc && \
     unzip -o satgraf-0.2.zip && \
     unzip -o z3-z3-4.5.0.zip && \
+    rm ./*.zip && \
     mv z3-z3-4.5.0 z3 && \
     cd z3 && patch src/sat/tactic/sat_tactic.cpp < ../scripts/z3_dimacs.patch && \
     python scripts/mk_make.py && \

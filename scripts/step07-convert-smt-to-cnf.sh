@@ -6,7 +6,7 @@ FILES=${1}/*.c
 #cd ${1} # directory where the source code files are located
 rm ${2} # file where to write the list of CNF files/instances
 rm experiment-stats.csv
-mkdir ./obfuscated-instances
+mkdir ./obfuscated-cnf-instances
 
 for FILENAME in $FILES
 do
