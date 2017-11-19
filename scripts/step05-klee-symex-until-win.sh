@@ -104,7 +104,6 @@ do
   rm -r ${D}/*.pc
   rm -r ${D}/*.ktest
 
-  #python ../step4-new-symex-for-win-process.py "${file_name}.log"
   fi
 done
 
