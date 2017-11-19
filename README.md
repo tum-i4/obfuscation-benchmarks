@@ -57,7 +57,7 @@ xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 docker run -it --volume=$XSOCK:$XSOCK:rw \
                --volume=$XAUTH:$XAUTH:rw \
                --env="XAUTHORITY=${XAUTH}" \
-               --env="DISPLAY" --user="klee" banescusebi/symex-tigress
+               --env="DISPLAY" --user="klee" banescusebi/obfuscation-symex
 ```
 
 ### Running the container in macOS X
@@ -88,7 +88,7 @@ In the preferences window of XQuartz, in the "Security" tab, check the "Allow co
 ```sh
 IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix \
-           -e DISPLAY=$IP:0 banescusebi/symex-tigress
+           -e DISPLAY=$IP:0 banescusebi/obfuscation-symex
 ```
 
 ## References

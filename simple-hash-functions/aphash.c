@@ -23,9 +23,7 @@ int main(int argc, char* argv[]) {
   unsigned int hash = APHash(str, strlen(str));
   
   if (hash == 0x23c9344)
-		printf("The license key is correct!\n");
-	else
-		printf("The license key is incorrect!\n");
-	return 0;
+		printf("You win\n");
+  return 0;
 }
 

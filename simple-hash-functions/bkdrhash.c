@@ -25,9 +25,7 @@ int main(int argc, char* argv[]) {
   //printf("%x\n", hash);
   
   if (hash == 0xbd9282b2)
-		printf("The license key is correct!\n");
-	else
-		printf("The license key is incorrect!\n");
-	return 0;
+		printf("You win!\n");
+  return 0;
 }
 
