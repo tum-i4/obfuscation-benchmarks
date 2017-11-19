@@ -7,6 +7,7 @@ This repository contains the source code of C programs, which can be used as obf
 ## Description of Each Directory
 
   - `basic-algorithms` contains typical algorithms taught in Bachelor level computer science and programming courses, e.g. factorial, sorting algorithms, searching algorithms, greatest common divisor, least common multiple, etc.
+  - `resources` contains archives of some of the tools we used for our experiments. We install these tools in an [automated Docker build](https://hub.docker.com/r/banescusebi/obfuscation-symex/) (instructions provided below), where one can play around with the tools and scripts provided in this repository, without the hassle of installing an configurating everything from scratch.
   - `simple-hash-functions` contains non-cryptographic hash functions 
   - `small-programs` contains a set of 48 programs with few lines of code constructed by varying the following code characteristics:
     - Range of symbolic inputs
@@ -30,6 +31,65 @@ This repository contains the source code of C programs, which can be used as obf
 symbolic execution attack described a series of papers by Banescu et
 al. [1], [2] and [3]. For more details about how to use these scripts
 see README inside folder.
+
+## Automated Docker Build
+
+Based on Ubuntu 14.04, having the following software installed:
+
+* KLEE symbolic execution engine (latest Docker)
+* Tigress C Obfuscator (version 2.2)
+* SATGraf (version 0.2)
+* Z3 SMT Solver (version 4.5.0)
+
+### Root credentials
+
+* Username: klee
+* Password: klee
+
+### Running the container in Ubuntu
+
+To run GUI apps from the container execute the following command:
+```sh
+XSOCK=/tmp/.X11-unix
+XAUTH=/tmp/.docker.xauth
+touch $XAUTH
+xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+docker run -it --volume=$XSOCK:$XSOCK:rw \
+               --volume=$XAUTH:$XAUTH:rw \
+               --env="XAUTHORITY=${XAUTH}" \
+               --env="DISPLAY" --user="klee" banescusebi/symex-tigress
+```
+
+### Running the container in macOS X
+
+This [post](https://cntnr.io/running-guis-with-docker-on-mac-os-x-a14df6a76efc) 
+helpful to follow in order to run GUI apps from the container on macOS X.
+For convenience we present the steps here:
+
+```sh
+brew install socat
+socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
+```
+
+Install [xQuartz](https://www.xquartz.org/) either using the following commands or downloding the .dmg file from the website.
+
+```sh
+brew install xquartz
+```
+
+After installing xQuartz run the following command:
+
+```sh
+open -a XQuartz
+```
+
+In the preferences window of XQuartz, in the "Security" tab, check the "Allow connections from network clients" checkbox.
+
+```sh
+IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix \
+           -e DISPLAY=$IP:0 banescusebi/symex-tigress
+```
 
 ## References
 
