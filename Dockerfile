@@ -45,8 +45,8 @@ RUN unzip tigress-Linux-x86_64-2.2.zip && \
     cd build && \
     make
 USER root
-RUN cd z3/build && sudo make install
-    cd ${HOME}
-    chown $USERNAME ./scripts/ ./simple-hash-functions/
+RUN cd z3/build && sudo make install && \
+    cd ${HOME} && \
+    chown $USERNAME ./scripts/ ./simple-hash-functions/ && \
     chgrp $USERNAME ./scripts/ ./simple-hash-functions/ 
 USER $USERNAME  
