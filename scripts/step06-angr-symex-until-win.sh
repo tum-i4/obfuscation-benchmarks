@@ -2,6 +2,7 @@
 
 # 1st argument the directory of the obfuscated binaries (should have the same names as the C files)
 # 2nd argument the name of the text/CSV file where the results of the run will be stored
+# 3rd Argument is the maximum length of the symbolic input
 
 FILES=${1}/*.c
 
@@ -16,6 +17,6 @@ do
   gcc ${FILENAME} -o ${F}
   now=$(date)
   echo "Started symex at ${now}"
-  timeout 3600s ipython ./angr-symex.py ${F} 5 ${2}
+  timeout 3600s ipython ./angr-symex.py ${F} ${3} ${2}
 done
 

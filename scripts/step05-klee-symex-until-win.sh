@@ -2,6 +2,7 @@
 
 # 1st Argument the name of the directory where the C files that must be symbolically executed resides.
 # 2nd Argument must be a unique random executable name. The name must be unique such that it can be found by the pkill utility.
+# 3rd Argument is the maximum length of the symbolic input
 
 FILES=${1}/*.c
 
@@ -30,7 +31,7 @@ do
   rm file.log
   start_time=$(date +"%s%N")
 
-  klee --optimize --emit-all-errors --libc=uclibc --posix-runtime --only-output-states-covering-new --max-time=3600 --write-smt2s --output-dir=klee-out-${file_name} ./${file_name}.bc --sym-arg 5 &> file.log &
+  klee --optimize --emit-all-errors --libc=uclibc --posix-runtime --only-output-states-covering-new --max-time=3600 --write-smt2s --output-dir=klee-out-${file_name} ./${file_name}.bc --sym-arg ${3} &> file.log &
   klee_pid=$!
   now=$(date -u)
   echo "Started symex at $now"
