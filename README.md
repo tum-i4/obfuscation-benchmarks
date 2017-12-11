@@ -96,3 +96,4 @@ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix \
 1. Banescu, S., Ochoa, M., & Pretschner, A. (2015, May). _A framework for measuring software obfuscation resilience against automated attacks_. In Proceedings of the 1st International Workshop on Software Protection.
 2. Banescu, S., Collberg, C., Ganesh, V., Newsham, Z., & Pretschner, A. (2016, December). _Code obfuscation against symbolic execution attacks_. In Proceedings of the 32nd Annual Conference on Computer Security Applications.
 3. Banescu, S., Collberg, C., & Pretschner, A. (2017, August). _Predicting the Resilience of Obfuscated Code Against Symbolic Execution Attacks via Machine Learning_. In Proceedings of the 26th USENIX Security Symposium.
+4. Banescu, S. E. (2017, August). _Characterizing the Strength of Software Obfuscation Against Automated Attacks_. Doctoral dissertation, Technische Universit&#228;t M&#252;nchen.
