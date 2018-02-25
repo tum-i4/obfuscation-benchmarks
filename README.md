@@ -60,6 +60,17 @@ docker run -it --volume=$XSOCK:$XSOCK:rw \
                --env="DISPLAY" --user="klee" banescusebi/obfuscation-symex
 ```
 
+If you also want to mount your current directoy to a directlory called
+`test` then replace the last command from above with:
+```sh
+docker run -it --volume=$XSOCK:$XSOCK:rw \
+               --volume=$XAUTH:$XAUTH:rw \
+               --env="XAUTHORITY=${XAUTH}" \
+               --env="DISPLAY" --user="klee" \
+               --mount type=bind,src="$(pwd)",dst=/home/klee/test \
+               banescusebi/obfuscation-symex
+```
+
 ### Running the container in macOS X
 
 This [post](https://cntnr.io/running-guis-with-docker-on-mac-os-x-a14df6a76efc) 
